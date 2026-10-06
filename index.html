@@ -1,0 +1,2257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Moiduuuu ♡</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: white;
+    background:
+        radial-gradient(circle at 20% 20%, #3d2b50 0%, transparent 35%),
+        radial-gradient(circle at 80% 80%, #302044 0%, transparent 35%),
+        #090b19;
+}
+
+/* ---------------- STARS ---------------- */
+
+#stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    opacity: .35;
+    animation: twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    50% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}
+
+/* ---------------- FLOATING HEARTS ---------------- */
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    font-size: 18px;
+    opacity: 0;
+    animation: floatHeart 9s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes floatHeart {
+    10% {
+        opacity: .4;
+    }
+
+    100% {
+        transform: translateY(-115vh) rotate(25deg);
+        opacity: 0;
+    }
+}
+
+/* ---------------- PAGES ---------------- */
+
+#book {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.page {
+    display: none;
+
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 50px 22px 100px;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    overflow-y: auto;
+}
+
+.page.active {
+    display: flex;
+    animation: pageNext .55s ease;
+}
+
+.page.active.fromBack {
+    animation: pageBack .55s ease;
+}
+
+@keyframes pageNext {
+    from {
+        opacity: 0;
+        transform: translateX(45px) scale(.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+@keyframes pageBack {
+    from {
+        opacity: 0;
+        transform: translateX(-45px) scale(.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+.content {
+    width: min(850px, 100%);
+    margin: auto;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 10px;
+    opacity: .6;
+    margin-bottom: 16px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: clamp(55px, 13vw, 110px);
+    line-height: .9;
+    margin: 10px 0;
+}
+
+h2 {
+    font-size: clamp(38px, 8vw, 70px);
+    line-height: 1;
+    margin: 10px 0 25px;
+}
+
+p {
+    font-size: 14px;
+    line-height: 1.9;
+    color: #f3eef5;
+}
+
+.long {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.script {
+    font-family: "Caveat", cursive;
+    font-size: clamp(28px, 5vw, 45px);
+}
+
+/* ---------------- OPENING ---------------- */
+
+.opening {
+    padding: 50px 25px;
+    border-radius: 35px;
+
+    border: 1px solid #ffffff22;
+
+    background: #ffffff09;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 30px 80px #0006;
+}
+
+.bigheart {
+    font-size: 65px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+/* ---------------- BUTTONS ---------------- */
+
+.btn {
+    border: 1px solid #ffffff55;
+
+    background: #ffffff12;
+
+    color: white;
+
+    padding: 12px 24px;
+
+    border-radius: 30px;
+
+    font-family: Poppins;
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: .25s;
+
+    margin: 8px 4px;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    background: #ffffff25;
+}
+
+/* ---------------- CARDS ---------------- */
+
+.grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(190px, 1fr));
+
+    gap: 16px;
+
+    margin-top: 25px;
+}
+
+.card {
+    padding: 25px;
+
+    border-radius: 25px;
+
+    border: 1px solid #ffffff22;
+
+    background: #ffffff0d;
+
+    box-shadow: 0 18px 45px #0003;
+}
+
+.card h3 {
+    font-size: 24px;
+    margin: 8px 0;
+}
+
+.icon {
+    font-size: 30px;
+}
+
+/* ---------------- MEMORY ---------------- */
+
+.memory {
+    padding: 30px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffb8d51a,
+            #a9b8ff12
+        );
+
+    border: 1px solid #ffffff20;
+
+    margin: 15px 0;
+}
+
+/* ---------------- TIMELINE ---------------- */
+
+.timeline {
+    max-width: 700px;
+    margin: 30px auto;
+
+    text-align: left;
+}
+
+.item {
+    border-left: 1px solid #ffffff35;
+
+    padding:
+        0 0 28px 28px;
+
+    position: relative;
+}
+
+.item::before {
+    content: "♡";
+
+    position: absolute;
+
+    left: -11px;
+    top: -5px;
+
+    color: #ffc4da;
+
+    background: #17192f;
+
+    font-size: 20px;
+}
+
+.item h3 {
+    font-family: "Caveat", cursive;
+
+    font-size: 30px;
+
+    color: #ffc7dc;
+
+    margin: 0 0 5px;
+}
+
+/* ---------------- LETTER ---------------- */
+
+.letter {
+    background: #f8eee7;
+
+    color: #3b3037;
+
+    padding: 35px 28px;
+
+    text-align: left;
+
+    border-radius: 5px;
+
+    box-shadow: 0 25px 60px #0005;
+
+    transform: rotate(-.4deg);
+}
+
+.letter p {
+    color: #40363d;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 22px;
+
+    line-height: 1.55;
+
+    margin: 0 0 18px;
+}
+
+.letter .sig {
+    text-align: right;
+
+    font-size: 30px;
+}
+
+/* ---------------- MOON ---------------- */
+
+.moon {
+    font-size: 85px;
+
+    filter:
+        drop-shadow(0 0 25px #fff5);
+}
+
+/* ---------------- REVEALS ---------------- */
+
+.reveal {
+    min-height: 110px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 25px auto;
+
+    padding: 25px;
+
+    border-radius: 25px;
+
+    background: #ffffff0a;
+
+    border: 1px solid #ffffff18;
+}
+
+#reveal,
+#answer {
+    font-family: "Caveat", cursive;
+
+    font-size: 30px;
+
+    color: #ffc6dc;
+}
+
+/* ---------------- GIFT ---------------- */
+
+.gift {
+    width: 145px;
+    height: 110px;
+
+    margin: 30px auto;
+
+    position: relative;
+
+    cursor: pointer;
+}
+
+.gbody {
+    position: absolute;
+
+    bottom: 0;
+
+    width: 145px;
+    height: 85px;
+
+    background: #d77a9f;
+
+    border-radius: 4px;
+}
+
+.glid {
+    position: absolute;
+
+    top: 4px;
+    left: -7px;
+
+    width: 159px;
+    height: 30px;
+
+    background: #eda1ba;
+
+    border-radius: 4px;
+
+    z-index: 2;
+
+    transition: .6s;
+}
+
+.gribbon {
+    position: absolute;
+
+    left: 61px;
+    bottom: 0;
+
+    width: 23px;
+    height: 110px;
+
+    background: #f9dce8;
+
+    z-index: 3;
+}
+
+.gift.open .glid {
+    transform:
+        translateY(-65px)
+        rotate(-8deg);
+}
+
+.hiddenMessage {
+    display: none;
+
+    padding: 28px;
+
+    border-radius: 25px;
+
+    background: #ffffff0d;
+
+    border: 1px solid #ffffff1c;
+}
+
+.hiddenMessage.show {
+    display: block;
+
+    animation: pageNext .5s;
+}
+
+/* ---------------- NAVIGATION ---------------- */
+
+.nav {
+    position: fixed;
+
+    left: 50%;
+    bottom: 12px;
+
+    transform: translateX(-50%);
+
+    z-index: 50;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 7px 10px;
+
+    border-radius: 35px;
+
+    background: #090b19dd;
+
+    backdrop-filter: blur(12px);
+
+    border: 1px solid #ffffff22;
+}
+
+.nav button {
+    border: 0;
+
+    color: white;
+
+    background: #ffffff10;
+
+    border-radius: 22px;
+
+    padding: 9px 14px;
+
+    cursor: pointer;
+}
+
+.nav button:hover {
+    background: #ffffff20;
+}
+
+#counter {
+    font-size: 11px;
+
+    opacity: .65;
+
+    min-width: 50px;
+
+    text-align: center;
+}
+
+/* ---------------- PROGRESS ---------------- */
+
+.progress {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    height: 3px;
+
+    background: #ffc2d8;
+
+    z-index: 60;
+
+    transition: .4s;
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media(max-width:600px) {
+
+    .page {
+        padding:
+            40px
+            17px
+            90px;
+    }
+
+    p {
+        font-size: 13px;
+    }
+
+    .letter {
+        padding: 27px 20px;
+    }
+
+    .letter p {
+        font-size: 20px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- STARS -->
+<div id="stars"></div>
+
+<!-- FLOATING HEARTS -->
+<div class="heart" style="left:8%;animation-delay:0s">♡</div>
+<div class="heart" style="left:25%;animation-delay:3s">♥</div>
+<div class="heart" style="left:48%;animation-delay:6s">♡</div>
+<div class="heart" style="left:72%;animation-delay:1s">♥</div>
+<div class="heart" style="left:88%;animation-delay:4s">♡</div>
+
+<!-- PROGRESS -->
+<div class="progress" id="progress"></div>
+
+<div id="book">
+
+<!-- ================================================= -->
+<!-- PAGE 1 -->
+<!-- ================================================= -->
+
+<section class="page active">
+
+<div class="content">
+
+<div class="opening">
+
+<div class="bigheart">
+♡
+</div>
+
+<div class="eyebrow">
+A little website for one very special person
+</div>
+
+<h1>
+Moiduuuu
+</h1>
+
+<div class="script">
+made with love by Lena
+</div>
+
+<p class="long">
+
+If you're reading this, you have officially entered
+a tiny little world made especially for you.
+
+There are memories here,
+things I don't always say out loud,
+little reminders,
+and a whole lot of love.
+
+</p>
+
+<button class="btn" onclick="nextPage()">
+Open my heart ♡
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- PAGE 2 -->
+<!-- ================================================= -->
+
+<section class="page">
+
+<div class="content">
+
+<div class="eyebrow">
+Chapter 01
+</div>
+
+<h2>
+Before you read anything else...
+</h2>
+
+<p class="long">
+
+I wanted to make something that wouldn't disappear
+after one conversation.
+
+Something you could come back to whenever you wanted.
+
+<br><br>
+
+Because there are some things that are difficult
+to fit into one message.
+
+There are feelings that need more than a few words,
+memories that deserve their own little place,
+and things I want you to remember even on days
+when I forget to say them.
+
+<br><br>
+
+So this is my little way of putting all of that
+somewhere safe.
+
+A tiny corner that is just for you.
+
+</p>
+
+<button class="btn" onclick="prevPage()">
+← Back
+</button>
+
+<button class="btn" onclick="nextPage()">
+Next →
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- PAGE 3 -->
+<!-- ================================================= -->
+
+<section class="page">
+
+<div class="content">
+
+<div class="eyebrow">
+Chapter 02
+</div>
+
+<h2>
+You are my person.
+</h2>
+
+<p class="long">
+
+You're the kind of person who knows so much about me.
+
+The person I can tell my random thoughts to,
+even when they make absolutely no sense.
+
+<br><br>
+
+You listen.
+
+You try to understand.
+
+You notice when something is wrong.
+
+You make sure I'm okay.
+
+And you support me through situations
+even when you don't have to.
+
+<br><br>
+
+That kind of care is not something
+I take lightly.
+
+Sometimes love isn't a huge dramatic gesture.
+
+Sometimes it's simply someone remembering
+to ask if you're okay —
+and actually caring about the answer.
+
+<br><br>
+
+That's you.
+
+</p>
+
+<button class="btn" onclick="prevPage()">
+← Back
+</button>
+
+<button class="btn" onclick="nextPage()">
+Next →
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- PAGE 4 -->
+<!-- ================================================= -->
+
+<section class="page">
+
+<div class="content">
+
+<div class="eyebrow">
+Chapter 03
+</div>
+
+<h2>
+Things I love about you
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<div class="icon">♡</div>
+
+<h3>
+You listen
+</h3>
+
+<p>
+You let me talk, even when my thoughts
+are messy, random, or all over the place.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">☁</div>
+
+<h3>
+You understand
+</h3>
+
+<p>
+You actually try to understand what I mean
+instead of just hearing the words.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">✦</div>
+
+<h3>
+You support me
+</h3>
+
+<p>
+You make me feel like I don't have
+to face everything alone.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">♡</div>
+
+<h3>
+You care
+</h3>
+
+<p>
+You check on me and make sure I'm okay
+in ways that mean more than you know.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">∞</div>
+
+<h3>
+You stay
+</h3>
+
+<p>
+Through good days, weird days,
+stressful days and everything between them.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🌙</div>
+
+<h3>
+You feel like home
+</h3>
+
+<p>
+Not a place. Just that comfortable feeling
+of being able to be myself.
+</p>
+
+</div>
+
+</div>
+
+<button class="btn" onclick="prevPage()">
+← Back
+</button>
+
+<button class="btn" onclick="nextPage()">
+Next →
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- PAGE 5 -->
+<!-- ================================================= -->
+
+<section class="page">
+
+<div class="content">
+
+<div class="eyebrow">
+The beginning
+</div>
+
+<h2>
+17 • 06 • 2024
+</h2>
+
+<div class="memory">
+
+<div class="eyebrow">
+Our first meeting
+</div>
+
+<div class="script">
+One date.
+One beginning.
+So many chapters after it.
+</div>
+
+<p>
+
+17 June 2024 might have looked like
+an ordinary date, but it became one of those
+dates that quietly changed the story.
+
+<br><br>
+
+We couldn't have known everything that would happen
+after that first meeting:
+
+the conversations,
+the memories,
+the laughs,
+the difficult moments,
+the beautiful moments,
+and all the ordinary days
+that slowly became special.
+
+<br><br>
+
+Looking back now,
+I think the sweetest part is knowing
+that the beginning was just the beginning.
+
+</p>
+
+</div>
+
+<button class="btn" onclick="prevPage()">
+← Back
+</button>
+
+<button class="btn" onclick="nextPage()">
+Next →
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- PAGE 6 -->
+<!-- ================================================= -->
+
+<section class="page">
+
+<div class="content">
+
+<div class="eyebrow">
+Our story
+</div>
+
+<h2>
+Look how far we've come.
+</h2>
+
+<div class="timeline">
+
+<div class="item">
+
+<h3>
+17 June 2024
+</h3>
+
+<p>
+Our first meeting.
+
+The first page of a story we didn't know
+would become so important.
+</p>
+
+</div>
+
+
+<div class="item">
+
+<h3>
+Then came the little things...
+</h3>
+
+<p>
+Conversations became memories,
+and somehow you became one of my
+favourite people to talk to.
+</p>
+
+</div>
+
+
+<div class="item">
+
+<h3>
+My birthday ♡
+</h3>
+
+<p>
+A day we spent so much time together —
+one of those memories I want to keep close.
+</p>
+
+</div>
+
+
+<div class="item">
+
+<h3>
+Our last day before distance
+</h3>
+
+<p>
+A special day because we knew
+something was about to change.
+The kind of memory that stays.
+</p>
+
+</div>
+
+
+<div class="item">
+
+<h3>
+Long distance
+</h3>
+
+<p>
+Different places,
+more waiting,
+more missing each other —
+but still us.
+</p>
+
+</div>
+
+
+<div class="item">
+
+<h3>
+Now
+</h3>
+
+<p>
+Still making memories.
+Still caring.
+Still choosing to be part of each other's lives.
+</p>
+
+</div>
+
+</div>
+
+<button class="btn" onclick="prevPage()">
+← Back
+</button>
+
+<button class="btn" onclick="nextPage()">
+Next →
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- PAGE 7 -->
+<!-- ================================================= -->
+
+<section class="page">
+
+<div class="content">
+
+<div class="eyebrow">
+The little things
+</div>
+
+<h2>
+My favourite kind of memories
+</h2>
+
+<p class="long">
+
+Maybe the biggest memories aren't always
+the most important ones.
+
+Sometimes they're the small moments.
+
+<br><br>
+
+Random conversations.
+
+Laughing over something completely stupid.
+
+Talking about things nobody else would care about.
+
+Sharing thoughts.
+
+Checking on each other.
+
+Remembering tiny details.
+
+Being comfortable enough to say absolutely anything.
+
+<br><br>
+
+Those moments may seem ordinary while they're happening,
+but later they become the exact things
+you wish you could replay.
+
+</p>
+
+
+<div class="grid">
+
+<div class="card">
+
+<div class="icon">💬</div>
+
+<h3>
+Our conversations
+</h3>
+
+<p>
+From serious thoughts
+to complete nonsense.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">😂</div>
+
+<h3>
+The laughs
+</h3>
+
+<p>
+The kind where something stops being funny
+but we keep laughing.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">📸</div>
+
+<h3>
+The memories
+</h3>
+
+<p>
+Little moments that deserve
+to stay somewhere forever.
+</p>
+
+</div>
+
+</div>
+
+<button class="btn" onclick="prevPage()">
+← Back
+</button>
+
+<button class="btn" onclick="nextPage()">
+Next →
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- PAGE 8 -->
+<!-- ================================================= -->
+
+<section class="page">
+
+<div class="content">
+
+<div class="eyebrow">
+A memory I'll keep
+</div>
+
+<h2>
+That last day before distance
+</h2>
+
+<p class="long">
+
+Some goodbyes feel different because
+you know things are about to change.
+
+That last day before going into
+a long-distance relationship became
+one of those memories.
+
+<br><br>
+
+When you're together,
+you don't always realize how precious
+ordinary time is.
+
+You think there will always be another tomorrow,
+another afternoon,
+another chance to sit together and talk.
+
+<br><br>
+
+Then suddenly distance becomes real,
+and you start wishing you had saved
+every little moment.
+
+<br><br>
+
+So I want to remember that day
+not only because it was a goodbye,
+but because it was proof of how many
+memories we had already made.
+
+And proof that one chapter ending
+didn't mean our story ended.
+
+</p>
+
+<button class="btn" onclick="prevPage()">
+← Back
+</button>
+
+<button class="btn" onclick="nextPage()">
+Next →
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- PAGE 9 -->
+<!-- ================================================= -->
+
+<section class="page">
+
+<div class="content">
+
+<div class="moon">
+☾
+</div>
+
+<div class="eyebrow">
+The long-distance chapter
+</div>
+
+<h2>
+Then came the distance.
+</h2>
+
+<p class="long">
+
+Long distance is strange.
+
+Sometimes you're only one message away,
+and sometimes you wish a message could
+magically turn into a hug.
+
+<br><br>
+
+There are days when I want to tell you something
+and my first thought is simply,
+
+"I wish you were here."
+
+<br><br>
+
+But distance also teaches you something.
+
+It shows you that closeness isn't only about
+being in the same place.
+
+It's about remembering each other.
+
+Checking in.
+
+Listening.
+
+Sharing your day.
+
+Making time.
+
+Choosing to stay connected.
+
+<br><br>
+
+Different places don't have to mean
+different hearts.
+
+</p>
+
+<button class="btn" onclick="prevPage()">
+← Back
+</button>
+
+<button class="btn" onclick="nextPage()">
+Next →
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- PAGE 10 -->
+<!-- ================================================= -->
+
+<section class="page">
+
+<div class="content">
+
+<div class="eyebrow">
+Things distance can't change
+</div>
+
+<h2>
+Our little universe
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<div class="icon">💬</div>
+
+<h3>
+The way we talk
+</h3>
+
+<p>
+We can still share
+the smallest details of our day.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🤍</div>
+
+<h3>
+The comfort
+</h3>
+
+<p>
+Knowing there is someone who genuinely
+wants to know how you're doing.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🌙</div>
+
+<h3>
+The missing
+</h3>
+
+<p>
+Missing someone can be difficult,
+but it also reminds you
+how much they matter.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">∞</div>
+
+<h3>
+The memories
+</h3>
+
+<p>
+No distance can take away
+moments that already happened.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">✦</div>
+
+<h3>
+The support
+</h3>
+
+<p>
+Being there for each other
+doesn't require the same room.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">♡</div>
+
+<h3>
+The choice
+</h3>
+
+<p>
+Choosing each other again and again
+is its own kind of closeness.
+</p>
+
+</div>
+
+</div>
+
+<button class="btn" onclick="prevPage()">
+← Back
+</button>
+
+<button class="btn" onclick="nextPage()">
+  Next →
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- PAGE 11 -->
+<!-- ================================================= -->
+
+<section class="page">
+
+<div class="content">
+
+<div class="eyebrow">
+For the days that aren't easy
+</div>
+
+<h2>
+If you ever have a bad day...
+</h2>
+
+<div class="reveal" id="reveal">
+
+Click the button for a little reminder ♡
+
+</div>
+
+<button class="btn" onclick="revealMessage()">
+Give me a reminder
+</button>
+
+<p class="long">
+
+If you're tired,
+you don't have to solve everything today.
+
+<br><br>
+
+If you're stressed,
+take things one step at a time.
+
+<br><br>
+
+If you feel like you're not doing enough,
+remember that one difficult day
+doesn't define you.
+
+<br><br>
+
+If you feel alone,
+remember that there is someone
+who genuinely cares about you
+and wants you to be okay.
+
+<br><br>
+
+And if you miss me...
+
+well, I probably miss you too.
+
+</p>
+
+<button class="btn" onclick="prevPage()">
+← Back
+</button>
+
+<button class="btn" onclick="nextPage()">
+Next →
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- PAGE 12 -->
+<!-- ================================================= -->
+
+<section class="page">
+
+<div class="content">
+
+<div class="eyebrow">
+For your future
+</div>
+
+<h2>
+I hope life is kind to you.
+</h2>
+
+<p class="long">
+
+I hope you get the success you've worked for.
+
+I hope you find peace when life gets loud.
+
+I hope you have reasons to laugh
+on ordinary days.
+
+I hope you meet people who genuinely care about you.
+
+I hope you never lose the things
+that make you you.
+
+<br><br>
+
+I hope your plans work out,
+your dreams become real,
+and even when they don't,
+I hope you have the courage to keep trying.
+
+<br><br>
+
+I hope you become proud of the person
+you're becoming.
+
+And on the days when you aren't proud
+of yourself,
+I hope you remember that you are
+still worth being proud of.
+
+</p>
+
+<div class="script" style="margin-top:25px">
+You deserve good things, Moiduuuu. ♡
+</div>
+
+<button class="btn" onclick="prevPage()">
+← Back
+</button>
+
+<button class="btn" onclick="nextPage()">
+Next →
+</button>
+
+</div>
+
+</section>
+<!-- ================================================= -->
+<!-- PAGE 13 -->
+<!-- ================================================= -->
+
+<section class="page">
+
+<div class="content">
+
+<div class="eyebrow">
+The letter
+</div>
+
+<h2>
+Dear Moiduuuu,
+</h2>
+
+<div class="letter">
+
+<p>
+I don't think I say it enough,
+but I'm genuinely grateful
+that you're in my life.
+</p>
+
+<p>
+You're someone who knows so much about me.
+
+You listen to my thoughts,
+even when they're messy and random.
+
+You try to understand what I'm feeling,
+and you make sure I'm okay.
+</p>
+
+<p>
+That's something I don't want
+to take for granted.
+
+Being cared for isn't always
+about huge gestures.
+
+Sometimes it's a simple question,
+a little check-in,
+remembering something I said,
+or staying when I need someone.
+</p>
+
+<p>
+We've already collected so many memories.
+
+Our first meeting on 17 June 2024,
+my birthday,
+the ordinary days that became special,
+and that last day before distance
+changed the way we could spend time together.
+</p>
+
+<p>
+I know being long distance
+isn't always easy.
+
+Sometimes I wish I could just tell you
+to come here and not have to rely
+on a screen or a message.
+
+But distance can't erase everything
+we've already built.
+</p>
+
+<p>
+I hope you know how much I believe in you.
+
+I hope you succeed in everything
+you work towards.
+
+I hope you have peace,
+happiness,
+good people around you,
+and a life that makes you genuinely proud.
+</p>
+
+<p>
+Thank you for listening to me.
+
+Thank you for trying to understand me.
+
+Thank you for supporting me.
+
+Thank you for being someone
+I can talk to.
+</p>
+
+<p>
+I don't know exactly what every future
+chapter will look like,
+
+but I'm happy that this chapter
+has you in it.
+</p>
+
+<p class="sig">
+With love,<br>
+Lena ♡
+</p>
+
+</div>
+
+<button class="btn" onclick="prevPage()">
+← Back
+</button>
+
+<button class="btn" onclick="nextPage()">
+Next →
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- PAGE 14 -->
+<!-- ================================================= -->
+
+<section class="page">
+
+<div class="content">
+
+<div class="eyebrow">
+A very serious question
+</div>
+
+<h2>
+Let's test something...
+</h2>
+
+<div class="reveal">
+
+<div id="answer">
+Who is Lena's favourite person? 👀
+</div>
+
+</div>
+
+<button class="btn" onclick="answerQuestion()">
+Reveal answer ♡
+</button>
+
+<p class="script" style="margin-top:20px">
+No cheating before clicking.
+</p>
+
+<button class="btn" onclick="prevPage()">
+← Back
+</button>
+
+<button class="btn" onclick="nextPage()">
+Next →
+</button>
+
+</div>
+
+</section>
+<!-- ================================================= -->
+<!-- PAGE 15 -->
+<!-- ================================================= -->
+
+<section class="page">
+
+<div class="content">
+
+<div class="eyebrow">
+One last little surprise
+</div>
+
+<h2>
+Open this for Moidu.
+</h2>
+
+<div
+class="gift"
+onclick="openGift()"
+id="gift"
+>
+
+<div class="glid"></div>
+
+<div class="gbody"></div>
+
+<div class="gribbon"></div>
+
+</div>
+
+<div class="script">
+Tap the gift ♡
+</div>
+
+<div
+class="hiddenMessage"
+id="giftMessage"
+>
+
+<h2 style="font-size:40px">
+Moiduuuu ♡
+</h2>
+
+<p>
+
+If you ever forget how much you mean to me,
+come back here.
+
+<br><br>
+
+Remember 17 June 2024.
+
+Remember the birthday.
+
+Remember the laughs.
+
+Remember the random conversations.
+
+Remember the days we spent together.
+
+Remember the last day before distance.
+
+Remember everything that made
+this story ours.
+
+<br><br>
+
+And remember one simple thing:
+
+you are loved,
+appreciated,
+supported,
+and very, very special to me.
+
+<br><br>
+
+No matter how many chapters come after
+this one,
+
+I'm glad our story started with you.
+
+</p>
+
+<div class="script">
+Always, Lena ♡
+</div>
+
+</div>
+
+<button class="btn" onclick="prevPage()">
+← Back
+</button>
+
+<button class="btn" onclick="nextPage()">
+Next →
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- PAGE 16 -->
+<!-- ================================================= -->
+
+<section class="page">
+
+<div class="content">
+
+<div class="eyebrow">
+The last page
+</div>
+
+<h1>
+Lena
+</h1>
+
+<div class="script">
+♡
+</div>
+
+<h1 style="font-size:clamp(45px,10vw,85px)">
+Moiduuuu
+</h1>
+
+<div
+class="script"
+style="margin:30px auto;max-width:700px"
+>
+
+“No matter how many chapters
+we add to this story,
+
+my favourite part will always be
+that it started with you.”
+
+</div>
+
+<p class="long">
+
+Two people.
+
+<br>
+
+One story.
+
+<br>
+
+So many memories.
+
+<br>
+
+And hopefully many,
+many more chapters.
+
+<br><br>
+
+Thank you for being you.
+
+<br>
+
+Thank you for listening.
+
+<br>
+
+Thank you for understanding.
+
+<br>
+
+Thank you for being there.
+
+<br><br>
+
+And thank you for being one of
+the most beautiful parts of my life.
+
+</p>
+
+<div
+class="bigheart"
+style="margin-top:25px"
+>
+♡
+</div>
+
+<div class="script">
+Always, Lena.
+</div>
+
+<button class="btn" onclick="goTo(0)">
+Read it again ♡
+</button>
+
+</div>
+
+</section>
+</div>
+
+
+<!-- ================================================= -->
+<!-- NAVIGATION -->
+<!-- ================================================= -->
+
+<div class="nav">
+
+<button onclick="prevPage()">
+←
+</button>
+
+<span id="counter">
+1 / 16
+</span>
+
+<button onclick="nextPage()">
+→
+</button>
+
+</div>
+
+
+<script>
+
+/* PAGE SYSTEM */
+
+const pages =
+    [...document.querySelectorAll(".page")];
+
+let current = 0;
+
+
+function update(direction = "next") {
+
+    pages.forEach(page => {
+
+        page.classList.remove(
+            "active",
+            "fromBack"
+        );
+
+    });
+
+    pages[current].classList.add("active");
+
+    if (direction === "prev") {
+
+        pages[current].classList.add("fromBack");
+
+    }
+
+    document.getElementById("counter")
+        .textContent =
+        (current + 1) +
+        " / " +
+        pages.length;
+
+    document.getElementById("progress")
+        .style.width =
+        ((current + 1) /
+        pages.length * 100) +
+        "%";
+
+}
+
+
+/* NEXT PAGE */
+
+function nextPage() {
+
+    if (current < pages.length - 1) {
+
+        current++;
+
+        update("next");
+
+    }
+
+}
+
+
+/* PREVIOUS PAGE */
+
+function prevPage() {
+
+    if (current > 0) {
+
+        current--;
+
+        update("prev");
+
+    }
+
+}
+
+
+/* GO TO PAGE */
+
+function goTo(number) {
+
+    current = number;
+
+    update("prev");
+
+}
+
+
+/* BAD DAY MESSAGE */
+
+function revealMessage() {
+
+    const messages = [
+
+        "You don't have to be okay every second of every day. ♡",
+
+        "You're doing better than you think.",
+
+        "Someone is always cheering for you.",
+
+        "One difficult day doesn't define you.",
+
+        "You are loved more than you know.",
+
+        "And yes... Lena is still rooting for you. ♡"
+
+    ];
+
+    const random =
+        Math.floor(
+            Math.random() *
+            messages.length
+        );
+
+    document.getElementById("reveal")
+        .textContent =
+        messages[random];
+
+}
+
+
+/* QUESTION ANSWER */
+
+function answerQuestion() {
+
+    document.getElementById("answer")
+        .textContent =
+        "Obviously... MOIDUUUUUUUUU. ♡";
+
+}
+
+
+/* OPEN GIFT */
+
+function openGift() {
+
+    document
+        .getElementById("gift")
+        .classList
+        .toggle("open");
+
+    document
+        .getElementById("giftMessage")
+        .classList
+        .add("show");
+
+}
+
+
+/* KEYBOARD ARROWS */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "ArrowRight") {
+
+            nextPage();
+
+        }
+
+        if (event.key === "ArrowLeft") {
+
+            prevPage();
+
+        }
+
+    }
+);
+
+
+/* SWIPE ON PHONE */
+
+let touchStart = 0;
+
+
+document.addEventListener(
+    "touchstart",
+    function(event) {
+
+        touchStart =
+            event.touches[0].clientX;
+
+    },
+    { passive: true }
+);
+
+
+document.addEventListener(
+    "touchend",
+    function(event) {
+
+        const touchEnd =
+            event.changedTouches[0].clientX;
+
+        const difference =
+            touchEnd - touchStart;
+
+        if (Math.abs(difference) > 55) {
+
+            if (difference < 0) {
+
+                nextPage();
+
+            } else {
+
+                prevPage();
+
+            }
+
+        }
+
+    },
+    { passive: true }
+);
+
+
+/* CREATE STARS */
+
+const stars =
+    document.getElementById("stars");
+
+
+for (let i = 0; i < 90; i++) {
+
+    const star =
+        document.createElement("div");
+
+    star.className = "star";
+
+    star.style.left =
+        Math.random() * 100 + "%";
+
+    star.style.top =
+        Math.random() * 100 + "%";
+
+    star.style.animationDelay =
+        Math.random() * 4 + "s";
+
+    stars.appendChild(star);
+
+}
+
+
+/* START */
+
+update();
+
+</script>
+
+</body>
+</html>
